@@ -59,6 +59,9 @@ Spring loC容器概述
 	BeanFactory和ApplicationContext谁才是Spring loC容器?
 	BeanFactory是ApplicationContext的一个基础的实现类，ApplicationContext具有更多的实现信息和功能接口。
 	
+	BeanFactory是Spring底层loC容器
+	ApplicationContext是具备应用特性的BeanFactory超集
+	
 	
 6. Spring 应用上下文
 	ApplicationContext除了loC 容器角色，还有提供:
@@ -71,9 +74,27 @@ Spring loC容器概述
 		●Environment抽象(Environment Abstraction)
 	
 7. 使用Spring IoC容器
-
+	启动
+	运行
+	停止
 8. Spring IoC容器生命周期
 
 9.面试题精选
-
+	沙雕面试题一什么是Spring IoC容器?
+	答:Spring框架实现反转
+	 控制(IoC)原则。loC也称为依赖项
+	注入(DI)。它是一个对象定义它们的过程
+	仅依赖项(即它们使用的其他对象)
+	通过构造函数参数，工厂方法的参数，
+	或在对象实例之后在其上设置的属性
+	从工厂方法构造或返回。容器
+	然后在创建bean时注入这些依赖项。
+	
+	996面试题- BeanFactory与FactoryBean?
+	答:
+	BeanFactory是loC底层容器:
+	FactoryBean是创建Bean的一种方式，帮助实现复杂的初始化逻辑
+	
+	劝退面试题- Spring loC容器启动时做了哪些准备?
+	答: IoC配置元信息读取和解析、loC容器生命周期、Spring 事件发布、国际化等，更多答案将在后续专题章节逐一讨论
 	
