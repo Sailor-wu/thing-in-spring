@@ -4,4 +4,76 @@
 	由于在创建项目的时候，没有选中自动编译，在运行的时候，会找不到执行的class文件信息。因此会报这个错误。
 	解决：手动build一次或者  Project--> Build Automatically开启自动编译并修改一次运行文件。
 
+
+
+Spring loC容器概述
+
+1. Spring IoC依赖查找(
+		/thing-in-spring-ioc/src/main/java/org/spring/thing/ioc/dependency/lookup/DependencyLookupDemo.java
+		/thing-in-spring-ioc/src/main/resources/META-INF/dependency-lookup.xml
+		)
+	根据Bean名称查找
+		●实时查找
+		●延迟查找
+	根据Bean类型查找
+		●单个Bean对象
+	集合Bean对象
+	根据Bean名称+类型查找
+		●根据Java注解查找
+	单个Bean对象
+		●集合Bean对象
+	
+2. Spring loC依赖注入
+
+	●根据Bean名称注入
+	●根据Bean类型注入
+	●单个 Bean对象
+	●集合Bean对象
+	●注入容器內建Bean对象
+	●注入非Bean对象
+	●注入类型
+	●实时注入
+	●延迟注入
+	
+3. Spring loC依赖来源
+	●自定义Bean
+	
+	●容器內建Bean对象
+	
+	●容器內建依赖
+	
+4. Spring loC配置元信息
+	●Bean定义配置
+		●基于XML文件
+		●基于Properties文件
+		●基于Java注解
+		●基于Java API (专题讨论)
+	●loC容器配置
+		●基于XML文件
+		●基于Java注解
+		●基于Java API (专 题讨论)
+	●外部化属性配置
+		●基于Java注解a
+	
+5. Spring IoC容器
+	BeanFactory和ApplicationContext谁才是Spring loC容器?
+	BeanFactory是ApplicationContext的一个基础的实现类，ApplicationContext具有更多的实现信息和功能接口。
+	
+	
+6. Spring 应用上下文
+	ApplicationContext除了loC 容器角色，还有提供:
+		●面向切面(AOP)
+		●配置元信息(Configuration Metadata)
+		●资源管理(Resources)
+		●事件(Events)
+		●国际化(i18n)
+		●注解(Annotations)
+		●Environment抽象(Environment Abstraction)
+	
+7. 使用Spring IoC容器
+
+8. Spring IoC容器生命周期
+
+9.面试题精选
+
 	
