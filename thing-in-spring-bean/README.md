@@ -64,8 +64,54 @@ BeanDefinition是Spring Framework中定义Bean的配置元信息接口，包含:
 			
 
 6.	实例化 Spring Bean
+	● Bean实例化(Instantiation)
+	常规方式
+			通过构造器(配置元信息: XML、Java注解和Java API )
+			通过静态工厂方法(配置元信息: XML和Java API )
+			通过Bean工厂方法(配置元信息: XML和Java API )
+			通过FactoryBean (配置元信息: XML、Java注解和Java API )
+	特殊方式.
+			通过Servicel _oaderFactoryBean (配置元信息: XML、Java注解和Java API )
+			通过AutowireCapableBeanFactory#createBean(java.lang.Class, int, boolean)
+			通过BeanDefinitionRegistry#registerBeanDefinition(String,BeanDefinition)
+		
+
 7.	初始化 Spring Bean
+	@PostConstruct标注方法
+	●实现InitializingBean接口的afterPropertiesSet() 方法
+	自定义初始化方法
+		XML配置: <bean init-method="init”.. />
+	●Java注解: @Bean(initMethod=" init")
+	●Java API: AbstractBeanDefinition#setlnitMethodName(String)
+	
 8.	延迟初始化 Spring Bean
+	
+	XML配置: <bean lazy-init="true'.. />
+	Java注解: @L _azy(true)
+	
+
 9.	销毁 Spring Bean
+	●@PreDestroy 标注方法
+	●实现DisposableBean接口的destroy()方法
+	●自定义销毁方法
+		●XML配置: <bean destroy=" destroy”.. />
+		●Java 注解: @Bean(destroy= ”destroy")
+		●Java API: AbstractBeanDefinition#setDestroyMethodName(String)
+	
+
 10.	垃圾回收Spring Bean
+	1.关闭Spring容器(应用上下文)
+	2.执行GC
+	3.Spring Bean覆盖的finalize() 方法被回调
+	
+
 11.	面试题精选
+	沙雕面试题-如何注册一个Spring Bean?
+	答:通过BeanDefinition和外部单体对象来注册
+	
+	劝退面试题- Spring容器是怎样管理注册Bean
+	答:答案将在后续专题章节详细讨论，如: loC 配置元信息读取和解析、依赖查找和注入以及Bean生命周期等。
+	
+
+
+
