@@ -8,6 +8,7 @@
   
   <modules>
   	<module>thing-in-spring-ioc</module>
+  	<module>thing-in-spring-bean</module>
   </modules>
   
   <properties>
