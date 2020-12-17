@@ -4,14 +4,6 @@
     <groupId>org.thing.spring</groupId>
     <artifactId>thing-in-spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
   </parent>
-  <artifactId>thing-in-spring-ioc</artifactId>
-  
-  <dependencies>
-  		<dependency>
-			<groupId>org.springframework</groupId>
-		    <artifactId>spring-context</artifactId>
-  		</dependency>
-  </dependencies>
+  <artifactId>thing-in-leetcode</artifactId>
 </project>

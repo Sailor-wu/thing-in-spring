@@ -98,3 +98,161 @@ Spring loC容器概述
 	劝退面试题- Spring loC容器启动时做了哪些准备?
 	答: IoC配置元信息读取和解析、loC容器生命周期、Spring 事件发布、国际化等，更多答案将在后续专题章节逐一讨论
 	
+	
+	
+	
+	
+	
+	
+	Spring loC依赖查找
+	1.依赖查找的今世前生
+		●单一类型依赖查找
+			●JNDI - javax.naming.Context#lookup(javax.naming.Name)
+			●JavaBeans - java.beans.beancontext. Bean Context
+		●集合类型依赖查找
+			●java.beans.beancontext. BeanContext
+		●层次性依赖查找
+			●java.beans.beancontext.BeanContext
+	2.单一 类型依赖查找
+		● 单一类型依赖查找接口- BeanFactory
+		●根据Bean名称查找
+			●getBean(String)
+			●Spring 2.5覆盖默认参数: getBean(String,Objet..)
+		●根据Bean类型查找
+			●Bean实时查找
+			●Spring 3.0 getBean(Class)
+			●Spring 4.1覆盖默认参数: getBean(Class,Object..)
+		●Spring 5.1 Bean 延迟查找
+			●getBeanProvider(Class)
+			●getBeanProvider(ResolvableType)
+		●根据Bean名称+类型查找: getBean(String,Class)
+	3.集合类型依赖查找
+		●集合类型依赖查找接口- ListableBeanFactory
+		●根据Bean类型查找
+			●获取同类型Bean名称列表
+				●getBeanNamesFor Type(Class)
+				●Spring 4.2 getBeanNamesForType(ResolvableType)
+			●获取同类型Bean实例列表
+				●getBeansOfType(Class)以及重载方法
+		●通过注解类型查找
+				●Spring 3.0获取标注类型Bean名称列表
+					●getBeanNamesForAnnotation(Class<? extends Annotation>)
+				●Spring 3.0获取标注类型Bean实例列表
+					●getBeansWithAnnotation(Class<? extends Annotation>)
+				●Spring 3.0获取指定名称+标注类型Bean实例
+					●findAnnotationOnBean(String,Class<? extends Annotation>)
+				
+	4.层次性依赖查找
+		
+		●层次性依赖查找接口- HierarchicalBeanFactory
+		双亲BeanFactory: getParentBeanFactory()
+		层次性查找
+			●根据Bean名称查找
+				●基于contains ocalBean方法实现
+			●根据Bean类型查找实例列表
+				●单一类型: BeanFactoryUtils#beanOfType
+				●集合类型: BeanFactoryUtils#beansOfTypelncludingAncestors
+			●根据Java注解查找名称列表
+				●BeanFactoryUtils#beanNamesFor TypeIncludingAncestors
+				
+		
+	5.延迟依赖查找	
+		●Bean延迟依赖查找接口
+			●org.springframework.beans.factory.ObjectFactory
+			●org.springframework.beans.factory.ObjectProvider
+				Spring5对Java 8特性扩展
+					●函数式接口
+						●getlfAvailable(Supplier)
+						●ifAvailable(Consumer)
+					●Stream扩展- stream()
+		
+		
+	6.安全依赖查找
+		依赖查找安全性对比
+	依赖查找类型						代表实现						是否安全
+	单一类型查找					BeanFactory#getBean					否
+								ObjectFactory#getObject				否
+								ObjectProvider#getlfAvailable		是
+	集合类型查找					ListableBeanFactory#getBeansOfType	是
+								ObjectProvider#stream				是
+	注意:层次性依赖查找的安全性取决于其扩展的单一或集合类型的BeanFactory接口
+		
+	
+	7.内建可查找的依赖
+		AbstractApplicationContext内建可查找的依赖
+	Bean名称										Bean实例								使用场景
+	environment 							Environment对象 						外部化配置以及Profiles
+	systemProperties 						java.util.Properties对象 				Java系统属性
+	systemEnvironment 						java.util.Map对象 					操作系统环境变量
+	messageSource 							MessageSource对象 					国际化文案
+	lifecycleProcessor 						LifecycleProcessor对象 				Lifecycle Bean处理器
+	applicationEventMulticaster 			pplicationEventMulticaster对象Spring 事件广播器
+		
+	Bean名称										Bean实例								使用场景
+	org.springframework.context.				ConfigurationClassPostProcessor对象		处理Spring配置类
+	annotation.
+	internalConfigurationAnnotationProcessor								
+	
+	org.springframework.context.				AutowiredAnnotationBeanPostProcessor对象			处理@Autowired以及@Value注解
+	annotation.internalAutowired
+	AnnotationProcessor
+	
+	org.springframework.context. 				CommonAnnotationBeanPostProcessor对象		(条件激活)处理JSR- -250注解，如@PostConstruct等
+	annotation.internalCommonAnnotationProcessor
+	 
+	org.springframework.context. 				EventListenerMethodProcessor对象		处理标注@EventListener的Spring事件监听方法
+	event.internalEventL istenerProcessor
+
+	org.springframework.context.					DefaultEventL istenerFactory对象       	@EventL istener事件监听方法适配为ApplicationListener
+	event.internalEventL istenerFactory			
+	
+	org.springframework.context. 					PersistenceAnnotationBeanPost		(条件激活)处理JPA注解场景
+	annotation.internalPersistenc					Processor对象
+	eAnnotationProcessor
+
+
+		
+		
+	8.依赖查找 中的经典异常
+	BeansException子类型
+	异常类型								触发条件(举例)					场景举例
+	NoSuchBeanDefinitionException		当查找Bean不存在于loC容器时		BeanFactory#getBean
+																	ObjectFactory#getObject
+	NoUniqueBeanDefinitionException		类型依赖查找时，loC 容器存在多		BeanFactory#getBean(Class)
+										个Bean实例	
+													
+	BeanInstantiationException			当Bean所对应的类型非具体类时		BeanFactory#getBean
+	
+	BeanCreationException				当Bean初始化过程中				Bean初始化方法执行异常时
+	
+	BeanDefinitionStoreException		当BeanDefinition配置元信息非法时	XML配置资源无法打开时
+
+
+
+	
+	
+	
+	9.面试题精选
+		
+	ObjectFactory和BeanFactory的区别？
+	答: ObjectFactory与BeanFactory 均提供依赖查找的能力。
+	不过ObjectFactory仅关注一个或一 种类型的Bean依赖查找，并且
+	自身不具备依赖查找的能力，能力则由BeanFactory输出。
+	BeanFactory则提供了单-类型、集合类型以及层次性等多种依赖查
+	找方式，。
+		
+	996面试题- BeanFactory.getBean操作是否线程安全?
+	答: BeanFactory.getBean 方法的执行是线程安全的，操作过程中会增加互
+	斥锁
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
