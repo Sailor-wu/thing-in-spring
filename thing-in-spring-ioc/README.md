@@ -235,16 +235,27 @@ Spring loC容器概述
 	9.面试题精选
 		
 	ObjectFactory和BeanFactory的区别？
-	答: ObjectFactory与BeanFactory 均提供依赖查找的能力。
-	不过ObjectFactory仅关注一个或一 种类型的Bean依赖查找，并且
-	自身不具备依赖查找的能力，能力则由BeanFactory输出。
-	BeanFactory则提供了单-类型、集合类型以及层次性等多种依赖查
-	找方式，。
+		答: ObjectFactory与BeanFactory 均提供依赖查找的能力。
+		不过ObjectFactory仅关注一个或一 种类型的Bean依赖查找，并且
+		自身不具备依赖查找的能力，能力则由BeanFactory输出。
+		BeanFactory则提供了单-类型、集合类型以及层次性等多种依赖查找方式，。
 		
 	996面试题- BeanFactory.getBean操作是否线程安全?
-	答: BeanFactory.getBean 方法的执行是线程安全的，操作过程中会增加互
-	斥锁
+		答: BeanFactory.getBean 方法的执行是线程安全的，操作过程中会增加互斥锁
 	
+	
+	
+	
+	沙雕面试题-有多少种依赖注入的方式?
+		答:构造器注入 : 少依赖，强制性依赖的时候使用
+		Setter注入 : 多依赖，非强制性的依赖时候
+		字段注入	:主要是开发比较便利
+		方法注入	：通常只要是做声明
+		接口回调注入：比较特殊，有可能有些生命周期回调的时候一些注入。setBeanFactory  setApplicationContext
+	
+	996面试题-你偏好构造器注入还是Setter注入?
+		答:两种依赖注入的方式均可使用，如果是必须依赖的话，那么推荐使用构
+		造器注入，Setter 注入用于可选依赖。
 	
 	
 	
