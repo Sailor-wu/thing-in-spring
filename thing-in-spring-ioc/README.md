@@ -257,7 +257,22 @@ Spring loC容器概述
 		答:两种依赖注入的方式均可使用，如果是必须依赖的话，那么推荐使用构
 		造器注入，Setter 注入用于可选依赖。
 	
-	
+	沙雕面试题-注入和查找的依赖来源是否相同?
+		答:否,依赖查找的来源仅限于Spring BeanDefinition以及单例对象，
+		而依赖注入的来源还包括Resolvable Dependency以及@Value所标注的外部化配置
+			
+	996面试题-单例对象能在loC容器启动后注册吗? 
+		答:可以的，单例对象的注册与BeanDefinition 不同，BeanDefinition 会
+		被Configurablel istableBeanFactory#freezeConfiguration()方法影响，
+		从而冻结注册，单例对象则没有这个限制。.
+		
+	劝退面试题- Spring依赖注入的来源有哪些?
+		答:
+		Spring BeanDefinition
+		单例对象
+		Resolvable Dependency
+		@Value外部化配置
+				
 	
 	
 		

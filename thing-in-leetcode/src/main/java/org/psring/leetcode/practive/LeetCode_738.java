@@ -23,6 +23,9 @@ public class LeetCode_738 {
 	public static void main(String[] args) {
 		int arg=1234;
 		System.out.println(doingThing(arg));
+		
+		System.out.println(8+(12+5)/2);
+		System.out.println(8+((12+5)>>1));
 	}
 
 	/**
