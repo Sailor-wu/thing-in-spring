@@ -272,6 +272,23 @@ Spring loC容器概述
 		单例对象
 		Resolvable Dependency
 		@Value外部化配置
+		
+		
+	
+	
+	沙雕面试题- Spring內建的Bean作用域有几种? 
+	答: 
+	就设计模式来说，有单例（singleton）、原生（prototype）
+	从web方面来说，有 request、 session、 application 以及
+	websocket 
+	
+	
+	996面试题- singleton Bean是否在一个应用是唯-的?
+	答:否，singleton bean仅在当前Spring loC容器( BeanFactory)中是
+	单例对象。
+	
+	static 字段在不同的classLoader 是不一样的。
+	
 				
 	
 	

@@ -88,7 +88,7 @@ BeanDefinition是Spring Framework中定义Bean的配置元信息接口，包含:
 	
 	XML配置: <bean lazy-init="true'.. />
 	Java注解: @L _azy(true)
-	
+
 
 9.	销毁 Spring Bean
 	●@PreDestroy 标注方法
