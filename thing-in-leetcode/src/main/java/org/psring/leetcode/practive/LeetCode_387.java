@@ -9,6 +9,7 @@ import java.util.HashSet;
 public class LeetCode_387 {
  
 	public static void main(String[] args) {
+		
 		String s = "loveleetcode";//"leetcode";
 		System.out.println(new LeetCode_387().countStr2(s));
 	}
