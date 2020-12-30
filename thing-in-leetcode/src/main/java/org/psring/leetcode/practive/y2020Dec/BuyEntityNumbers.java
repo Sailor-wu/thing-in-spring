@@ -1,4 +1,4 @@
-package org.psring.leetcode.practive;
+package org.psring.leetcode.practive.y2020Dec;
 /**
  * .购买相对，指定的最大值，获取最大的优惠。
  * @author Sailor-why

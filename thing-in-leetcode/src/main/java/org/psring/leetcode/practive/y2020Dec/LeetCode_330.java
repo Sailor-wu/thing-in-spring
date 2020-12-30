@@ -1,4 +1,4 @@
-package org.psring.leetcode.practive;
+package org.psring.leetcode.practive.y2020Dec;
 
 public final class LeetCode_330 {
 
