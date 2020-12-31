@@ -12,6 +12,8 @@
   	<module>thing-in-spring-bean</module>
   	<module>thing-in-leetcode</module>
     <module>thing-in-spring-bean-lifecycle</module>
+    <module>thing-in-spring-designmode</module>
+    <module>thing-in-spring-smallpcp</module>
   </modules>
   
   <properties>
