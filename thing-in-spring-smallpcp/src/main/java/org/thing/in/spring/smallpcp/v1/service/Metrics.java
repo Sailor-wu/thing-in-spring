@@ -72,7 +72,7 @@ public class Metrics {
 					stats.get(apiName).put("count", (double) value.size());
 				}
 				
-				System.out.println(JSONObject.toJSON(stats));
+				System.out.println("计算处理类输出：\t"+JSONObject.toJSON(stats));
 			}
 		}, 0, period, unit);
 	}

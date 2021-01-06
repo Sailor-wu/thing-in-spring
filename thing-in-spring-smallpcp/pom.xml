@@ -18,6 +18,8 @@
 		<spring-vesion>5.2.2.RELEASE</spring-vesion>
 		<junit-version>3.8.1</junit-version>
 		<spring-boot-version>2.3.7.RELEASE</spring-boot-version>
+		<fastjson-version>1.2.75</fastjson-version>
+		<jredis-version>3.3.0</jredis-version>
 	</properties>
 
 	<dependencyManagement>
@@ -39,8 +41,16 @@
 			    <artifactId>spring-boot-devtools</artifactId>
 			    <version>${spring-boot-version}</version>
 			</dependency>
-						
-									
+			<dependency>
+			    <groupId>com.alibaba</groupId>
+			    <artifactId>fastjson</artifactId>
+			    <version>${fastjson-version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>redis.clients</groupId>
+			    <artifactId>jedis</artifactId>
+			    <version>${jredis-version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	
@@ -61,13 +71,14 @@
 			<version>${junit-version}</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>
 		    <groupId>com.alibaba</groupId>
 		    <artifactId>fastjson</artifactId>
-		    <version>1.2.75</version>
 		</dependency>
-				
+		<dependency>
+		    <groupId>redis.clients</groupId>
+		    <artifactId>jedis</artifactId>
+		</dependency>
 	</dependencies>
 	
 	<build>
