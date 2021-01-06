@@ -45,6 +45,7 @@ public class LeetCode_830 {
 	
 	
 	public List<List<Integer>> largeGroupPositions1(String s) {
+		
 		int start=0;
         List<List<Integer>> result=new ArrayList<List<Integer>>();
         for(int end=1;end<s.length();end++){
@@ -61,4 +62,27 @@ public class LeetCode_830 {
         return result;
 	}
 	
+	
+	public static void main(String[] args) {
+		String s= "abc";
+		
+		String s1 = new String("abc");
+		String s2= s1.intern();
+		
+		System.out.println(s==s1);
+		System.out.println(s2==s1);
+		System.out.println(s==s2);
+		
+		
+		Integer a = 127;
+		Integer b = 127;
+		
+		System.out.println(a==b);
+		
+		a = 128;
+		b = 128;
+		System.out.println(a==b);
+		
+		System.out.println(Long.MAX_VALUE);
+	}
 }
