@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import org.psring.leetcode.practive.util.Utils;
+
 /**
  * desc 给你一个字符串 s，以及该字符串中的一些「索引对」数组 pairs，其中 pairs[i] = [a, b] 表示字符串中的两个索引（编号从 0
  * 开始）。 <br>
@@ -46,7 +48,7 @@ public class LeetCode_1202 {
 //			{ { 0, 3 }, { 1, 2 } };
 			{ { 0, 3 }, { 1, 2 } ,{0,2}};
 
-		List<List<Integer>> pairs = asList(arr);
+		List<List<Integer>> pairs = Utils.asList(arr);
 		System.out.println(pairs);
 
 		String string = new LeetCode_1202().doProcess(s, pairs);
@@ -100,19 +102,7 @@ public class LeetCode_1202 {
 		}
 	}
 
-	private static List<List<Integer>> asList(int[][] arr) {
-		List<List<Integer>> pairs = new ArrayList<List<Integer>>();
-		List<int[]> asList = Arrays.asList(arr);
-		List<Integer> temp;
-		for (int[] is : asList) {
-			temp = new ArrayList<Integer>();
-			for (Integer i : is) {
-				temp.add(i);
-			}
-			pairs.add(temp);
-		}
-		return pairs;
-	}
+	
 
 }
 
