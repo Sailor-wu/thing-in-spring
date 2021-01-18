@@ -14,10 +14,14 @@
     <module>thing-in-spring-bean-lifecycle</module>
     <module>thing-in-spring-designmode</module>
     <!-- <module>thing-in-spring-smallpcp</module> -->
+    <module>thing-in-spring-ratelimiter</module>
+    <module>thing-in-spring-activiti</module>
   </modules>
   
   <properties>
   		<spring-vesion>5.2.2.RELEASE</spring-vesion>
+  		<jredis-version>3.3.0</jredis-version>
+		<activiti-dependencies.version>7.1.24</activiti-dependencies.version>	
   </properties>
   
   <dependencyManagement>
@@ -37,6 +41,17 @@
 			    <artifactId>spring-jdbc</artifactId>
 			    <version>${spring-vesion}</version>
 			</dependency>
+			<dependency>
+			    <groupId>redis.clients</groupId>
+			    <artifactId>jedis</artifactId>
+			    <version>${jredis-version}</version>
+			</dependency>
+			<dependency>
+                <groupId>org.activiti.dependencies</groupId>
+                <artifactId>activiti-dependencies</artifactId>
+                <version>${activiti-dependencies.version}</version>
+            </dependency>
+			
   		</dependencies>
   </dependencyManagement>
   
