@@ -1,12 +1,12 @@
-package org.thing.in.spring.ratelimiter.ratelimiter.alg.impl;
+package org.thing.in.spring.v2.ratelimiter.alg.impl;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.thing.in.spring.ratelimiter.ratelimiter.alg.RateLimiter;
-import org.thing.in.spring.ratelimiter.ratelimiter.exception.InternalErrorException;
+import org.thing.in.spring.v2.ratelimiter.alg.RateLimiter;
+import org.thing.in.spring.v2.ratelimiter.exception.InternalErrorException;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;

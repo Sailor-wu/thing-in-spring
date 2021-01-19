@@ -1,14 +1,11 @@
 package org.thing.in.spring.ratelimiter;
 
 import static org.mockito.Mockito.when;
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 import org.mockito.Mockito;
-import org.testng.annotations.Test;
-import org.thing.in.spring.ratelimiter.ratelimiter.alg.RateLimiter;
-import org.thing.in.spring.ratelimiter.ratelimiter.alg.impl.FixedTimeWindowRateLimiter;
-import org.thing.in.spring.ratelimiter.ratelimiter.exception.InternalErrorException;
+import org.thing.in.spring.v2.ratelimiter.alg.RateLimiter;
+import org.thing.in.spring.v2.ratelimiter.alg.impl.FixedTimeWindowRateLimiter;
+import org.thing.in.spring.v2.ratelimiter.exception.InternalErrorException;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;

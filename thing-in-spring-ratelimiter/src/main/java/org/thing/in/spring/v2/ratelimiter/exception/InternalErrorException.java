@@ -1,4 +1,4 @@
-package org.thing.in.spring.ratelimiter.ratelimiter.exception;
+package org.thing.in.spring.v2.ratelimiter.exception;
 /**
  * desc 自定义异常类信息 限流插件内部异常
  * @author Sailor-why

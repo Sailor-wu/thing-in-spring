@@ -1,6 +1,6 @@
-package org.thing.in.spring.ratelimiter.ratelimiter.alg;
+package org.thing.in.spring.v2.ratelimiter.alg;
 
-import org.thing.in.spring.ratelimiter.ratelimiter.exception.InternalErrorException;
+import org.thing.in.spring.v2.ratelimiter.exception.InternalErrorException;
 
 /**
  * desc 算法实现接口
