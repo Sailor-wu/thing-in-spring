@@ -25,6 +25,7 @@ public class LeetCode_989 {
 	}
 
 	public List<Integer> addToArrayForm(int[] A, int K) {
+<<<<<<< HEAD
 		LinkedList<Integer> res = new LinkedList<Integer>();
 		int len = A.length , lastNum = K;
 		int i = len -1; // 从后面开始添加
@@ -37,9 +38,7 @@ public class LeetCode_989 {
 			lastNum = lastNum / 10 + temp /10;
 			i--;
 		}
-		
 		return res;
-		
 //		int len = A.length;
 //		int lastNum = K;
 //		LinkedList<Integer> ret = new LinkedList<>();
@@ -51,6 +50,19 @@ public class LeetCode_989 {
 //			i--;
 //		}
 //		return ret;
+=======
+		int len = A.length;
+		int lastNum = K;
+		LinkedList<Integer> ret = new LinkedList<>();
+		int i = len - 1;
+		while (i >= 0 || lastNum > 0) {
+			int tmp = lastNum % 10 + (i >= 0 ? A[i] : 0);
+			ret.addFirst(tmp % 10);
+			lastNum = lastNum / 10 + tmp / 10;
+			i--;
+		}
+		return ret;
+>>>>>>> 2d7d633f8c1225f12c2f7c183ece554160b92c0d
 	}
 
 }
