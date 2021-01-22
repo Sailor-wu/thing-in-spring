@@ -37,6 +37,7 @@ public class LeetCode_989 {
 			lastNum = lastNum / 10 + temp /10;
 			i--;
 		}
+		
 		return res;
 		
 //		int len = A.length;
