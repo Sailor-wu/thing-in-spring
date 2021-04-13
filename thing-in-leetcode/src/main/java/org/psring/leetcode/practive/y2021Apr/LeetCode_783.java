@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.psring.leetcode.practive.util.TreeNode;
 /**
- * desc 查找二叉树中最小的距离
+ * desc 查找二叉树中最小的距离  返回  树中任意两不同节点值之间的最小差值
  * @author Sailor-why
  */
 public class LeetCode_783 {
