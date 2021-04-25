@@ -48,5 +48,32 @@ public class TreeNode {
             return tn;
         }
         return tn;
-    } 
+    }
+
+	public static void printNodePreOrder(TreeNode treeNode) {
+		if(treeNode == null) {
+			return;
+		}
+		printNodePreOrder(treeNode.left);
+		System.out.print(treeNode.val+"\t");
+		printNodePreOrder(treeNode.right);
+	}
+
+	public static void printNodePostOrder(TreeNode treeNode) {
+		if(treeNode == null) {
+			return;
+		}
+		System.out.print(treeNode.val+"\t");
+		printNodePreOrder(treeNode.left);
+		printNodePreOrder(treeNode.right);
+	}
+
+	public static void printNodeInOrder(TreeNode treeNode) {
+		if(treeNode == null) {
+			return;
+		}
+		printNodePreOrder(treeNode.right);
+		printNodePreOrder(treeNode.left);
+		System.out.print(treeNode.val+"\t");
+	} 
 }
