@@ -7,7 +7,7 @@ public class ListNode {
 	ListNode() {
 	}
 
-	ListNode(int val) {
+	public ListNode(int val) {
 		this.val = val;
 	}
 
@@ -28,5 +28,12 @@ public class ListNode {
 			nodeArr = nodeI;
 		}
 		return node;
+	}
+
+	public static void printNodeVal(ListNode node3) {
+		while (node3!=null) {
+			System.out.print(node3.val+"-");
+			node3 = node3.next;
+		}
 	}
 }
