@@ -1,7 +1,5 @@
 package org.psring.leetcode.practive.util;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class TreeNode {
 	public Integer val;
@@ -34,6 +32,13 @@ public class TreeNode {
         root.right = helper((begin+end)/2+1,end);
         return root;
     } 
+	/**
+	 * 	前序遍历
+	 * @param array
+	 * @param index
+	 * @return
+	 * TreeNode
+	 */
 	public TreeNode createBinaryTreeByArray(Integer []array,int index)
     {
         TreeNode tn = null;
