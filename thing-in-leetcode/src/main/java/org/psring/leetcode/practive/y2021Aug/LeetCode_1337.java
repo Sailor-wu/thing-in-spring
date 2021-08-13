@@ -15,15 +15,18 @@ import java.util.PriorityQueue;
  */
 public class LeetCode_1337 {
 
+	@SuppressWarnings("null")
 	public static void main(String[] args) {
-		
-		LeetCode_1337 code_1337 = new LeetCode_1337();
-		int [][] arr = {{1,1,0,0,0},{1,1,1,1,0},{1,0,0,0,0},{1,1,0,0,0},{1,1,1,1,1}};
-		int k = 3;
-		int[] rows = code_1337.kWeakestRows(arr, k);
-		for (int i : rows) {
-			System.out.println(i);
-		}
+//		System.out.println("Unsubscribe".toUpperCase());
+//		LeetCode_1337 code_1337 = new LeetCode_1337();
+//		int [][] arr = {{1,1,0,0,0},{1,1,1,1,0},{1,0,0,0,0},{1,1,0,0,0},{1,1,1,1,1}};
+//		int k = 3;
+//		int[] rows = code_1337.kWeakestRows(arr, k);
+//		for (int i : rows) {
+//			System.out.println(i);
+//		}
+		Integer a = null;
+		System.out.println(null == a);
 		
 	}
 	
