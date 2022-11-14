@@ -2,7 +2,6 @@ package org.psring.leetcode.practive.y2020Dec;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import org.apache.commons.lang3.concurrent.ConcurrentUtils;
 
 /**
  * .回溯算法
@@ -14,26 +13,28 @@ public class BacktrackingAlgorithm {
 	// 全局变量
 	private int min_dist = Integer.MAX_VALUE;
 	public static void main(String[] args) {
-		int row = 6;
-		int[][] arr = new int[row][row];
-		for(int i = 0; i < row ; i++){
-			for (int j = 0; j < row; j++) {
-				arr[i][j] = ThreadLocalRandom.current().nextInt(0,10);
-				System.out.print(arr[i][j]+"\t");
-			}
-			System.out.println();
-		}
+
+
+//		int row = 6;
+//		int[][] arr = new int[row][row];
+//		for(int i = 0; i < row ; i++){
+//			for (int j = 0; j < row; j++) {
+//				arr[i][j] = ThreadLocalRandom.current().nextInt(0,10);
+//				System.out.print(arr[i][j]+"\t");
+//			}
+//			System.out.println();
+//		}
 		
 		
 		// 调用方式：minDistBacktracing(0, 0, 0, w, n);
-		BacktrackingAlgorithm backtrackingAlgorithm = new BacktrackingAlgorithm();
+//		BacktrackingAlgorithm backtrackingAlgorithm = new BacktrackingAlgorithm();
 //		backtrackingAlgorithm.minDistBacktracing(0, 0, 0, arr, row);
 //		System.out.println(backtrackingAlgorithm.getMinDist());
-		System.out.println("===============================");
-		int dp = backtrackingAlgorithm.minDistBacktracingDP( arr, row);
+//		System.out.println("===============================");
+//		int dp = backtrackingAlgorithm.minDistBacktracingDP( arr, row);
 		
-		System.out.printf("最短路径的值是 %d ",dp);
-
+//		System.out.printf("最短路径的值是 %d ",dp);
+		System.out.printf(String.valueOf(Integer.valueOf("null")));
 	}
 	
 	/**

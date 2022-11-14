@@ -24,11 +24,18 @@ import java.util.LinkedHashMap;
 public class LeetCode_33 {
 	
 	public static void main(String[] args) {
-		int nums [] = {4,5,6,7,0,1,2,3};
-		int target = 3;
-		HashMap hashMap;
-		LinkedHashMap linkedHashMap;
-		System.out.println(new LeetCode_33().search(nums, target));
+		StringBuilder str = new StringBuilder("sa,");
+		if (str.toString().endsWith(",")){
+			System.out.println(str.substring(0,str.lastIndexOf(",")));
+		}else {
+			System.out.println("asd");
+		}
+
+//		int nums [] = {4,5,6,7,0,1,2,3};
+//		int target = 3;
+//		HashMap hashMap;
+//		LinkedHashMap linkedHashMap;
+//		System.out.println(new LeetCode_33().search(nums, target));
 	}
 	
 	public int search(int[] nums, int target) {
